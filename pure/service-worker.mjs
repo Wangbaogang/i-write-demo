@@ -1,13 +1,17 @@
 console.log(self);
 
-// Call clients.claim so that we intercept requests even on initial page load.
-self.addEventListener('activate', () => {
+self.addEventListener('install', (event) => {
+    self.skipWaiting();
+});
+
+//Call clients.claim so that we intercept requests even on initial page load.
+self.addEventListener('activate', (event) => {
     self.clients.claim();
 });
 
 self.addEventListener('fetch', async event => {
     const request = event.request;
-    console.log(event);
+    console.log('Fetch Event:',event);
     if(isHTMLTemplate(request)) {
        event.respondWith(getResponse(request));
     }
