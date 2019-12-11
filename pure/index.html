@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- start ServiceWorker -->
-    <script type="module" src="./app.js"></script>
+    <script async src="./app.mjs"></script>
     <script>
     </script>
     <template data-label="红色">
@@ -27,13 +27,6 @@
     </template>
 </head>
 <body>
-    <script type="module">
-        // Q：此处import是同步异步？script标签下面的文档继续解析执行吗
-        import css7 from './css-7.html';
-        const head = document.querySelector('head');
-        // 若采取添加到文档中，再使用dom api获取的方式，可能获取不到（appendChild异步）
-        head.appendChild(css7);
-    </script>
     <style>
         .title {
             text-align: center;
@@ -44,7 +37,10 @@
             color: silver;
         }
     </style>
-    <h1 class="title">Pure Javascript Demo Collection<span class="subtitle">    powered by Web Compoennts</span></h1>
-    <display-list></display-list>
+    <h1 class="title">
+        Pure Javascript Demo Collection
+        <span class="subtitle">    powered by Web Compoennts</span>
+    </h1>
+    <!-- <display-list></display-list> -->
 </body>
 </html>

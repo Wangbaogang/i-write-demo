@@ -1,7 +1,8 @@
 console.log(self);
 
-self.addEventListener('activate', event => {
-    event.waitUntil(self.clients.claim());
+// Call clients.claim so that we intercept requests even on initial page load.
+self.addEventListener('activate', () => {
+    self.clients.claim();
 });
 
 self.addEventListener('fetch', async event => {

@@ -36,12 +36,13 @@ class DisplayList extends HTMLElement {
     }
 
     async connectedCallback() {
-        const waiting = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve();
-            }, 300);
-        })
-        await waiting;
+        // const waiting = new Promise((resolve) => {
+        //     setTimeout(() => {
+        //         resolve();
+        //     }, 300);
+        // })
+        // await waiting;
+        
         const root = this.shadowRoot;
 
         const tabs = root.querySelector('.tabs');
