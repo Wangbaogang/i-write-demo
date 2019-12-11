@@ -1,1 +1,1 @@
-[pure Javascript demo](https://github.com/Wangbaogang/i-write-demo/pure)
+[pure Javascript demo](https://wangbaogang.github.io/i-write-demo/pure)

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <!-- start ServiceWorker -->
     <script type="module" src="./app.js"></script>
     <script>
     </script>
@@ -24,12 +25,13 @@
         </style>
         <p>BLUE</p>
     </template>
-    
 </head>
 <body>
     <script type="module">
+        // Q：此处import是同步异步？script标签下面的文档继续解析执行吗
         import css7 from './css-7.html';
         const head = document.querySelector('head');
+        // 若采取添加到文档中，再使用dom api获取的方式，可能获取不到（appendChild异步）
         head.appendChild(css7);
     </script>
     <style>

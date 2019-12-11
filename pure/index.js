@@ -9,7 +9,6 @@ class DisplayList extends HTMLElement {
             mode: 'open'
         })
         const root = this.shadowRoot;
-        
         root.innerHTML = `
             <style>
                 ul {
@@ -33,10 +32,16 @@ class DisplayList extends HTMLElement {
             </ul>
             <ul class="panels">
             </ul>
-        `;        
+        `;    
     }
 
-    connectedCallback() {
+    async connectedCallback() {
+        const waiting = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve();
+            }, 300);
+        })
+        await waiting;
         const root = this.shadowRoot;
 
         const tabs = root.querySelector('.tabs');
