@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="module" src="./app.js"></script>
+    <script>
+    </script>
+    <template data-label="红色">
+        <style>
+            p {
+                color: red;
+            }
+        </style>
+        <p>RED</p>
+    </template>
+    <template data-label="蓝色">
+        <style>
+            p {
+                color: blue;
+            }
+        </style>
+        <p>BLUE</p>
+    </template>
+    
+</head>
+<body>
+    <script type="module">
+        import css7 from './css-7.html';
+        const head = document.querySelector('head');
+        head.appendChild(css7);
+    </script>
+    <style>
+        .title {
+            text-align: center;
+        }
+        .subtitle {
+            white-space: pre;
+            font-size: 16px;
+            color: silver;
+        }
+    </style>
+    <h1 class="title">Pure Javascript Demo Collection<span class="subtitle">    powered by Web Compoennts</span></h1>
+    <display-list></display-list>
+</body>
+</html>
