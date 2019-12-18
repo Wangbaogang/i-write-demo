@@ -1,9 +1,22 @@
-// ServiceWorker help with import html template
-import css7 from './template/css-7.html';
-import DisplayList from './display-list.mjs';
+import Demo from './pages/demo/index.mjs';
+import Router from './router.mjs';
+// import XTip from './components/x-tip/index.mjs';
 
-const head = document.querySelector('head');
-head.appendChild(css7);
+const app = document.querySelector('#app')
 
-document.body.appendChild(new DisplayList());
 
+const router = new Router();
+
+router.route('demo', () => {
+    app.innerHTML = '';    
+    app.appendChild(new Demo());
+})
+router.route('', () => {
+    app.innerHTML = '';    
+    app.appendChild(new Demo());
+})
+router.route('about', () => {
+    app.innerHTML = '';    
+    app.appendChild(new Demo());
+})
+router.start();

@@ -1,0 +1,32 @@
+<template data-label="表单">
+    <style>
+    </style>
+    <script>
+        var onsubmit = function(event) {
+            // alert(1);
+            // event.preventDefault();
+        }
+    </script>
+    <form action="a.php" method="post" onsubmit="window.onsubmit(event)">
+        <fieldset>
+            <input type="text">
+        </fieldset>
+        <input type="radio" name="abc" value="a">
+        <input type="radio" name="abc" value="b">
+        <input type="radio" name="abc" value="c">
+        <input type="text" value="default Value" autofocus onselect="console.log(event.target.selectionStart, event.target.selectionEnd)">
+        <input type="text" value="" required>
+        <input type="file">
+        <input type="email">
+        <select>
+            <option value="1">
+                1
+            </option>
+            <option value="2">
+                2
+            </option>
+        </select>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+</template>

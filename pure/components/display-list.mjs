@@ -17,6 +17,7 @@ class DisplayList extends HTMLElement {
                 .tabs {
                     display: flex;
                     flex-direction: row;
+                    flex-wrap: wrap;
                 }
                 li {
                     margin: 0 10px;

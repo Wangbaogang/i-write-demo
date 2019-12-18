@@ -7,11 +7,14 @@ if('serviceWorker' in navigator) {
             .then(() => {
                 console.log('import index.mjs successfully!');
             })
-            .catch(e => {
-                // 第一次加载，service worker未获取页面的控制权，导入html时会出错
-                console.table(e);
-                location.reload();
-            })
+            // .catch(e => {
+            //     console.table(e);
+
+            //     // 第一次加载，service worker未获取页面的控制权，导入html时会出错
+            //     if(e instanceof TypeError) {
+            //         // location.reload();
+            //     }
+            // })
            
             registration.addEventListener('updatefound', () => {
                 const netWorker = registration.installing;

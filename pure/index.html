@@ -7,29 +7,17 @@
     <title>Document</title>
     <!-- start ServiceWorker -->
     <script async src="./app.mjs"></script>
-    <script>
-    </script>
-    <template data-label="红色">
-        <style>
-            p {
-                color: red;
-            }
-        </style>
-        <p>RED</p>
-    </template>
-    <template data-label="蓝色">
-        <style>
-            p {
-                color: blue;
-            }
-        </style>
-        <p>BLUE</p>
-    </template>
+    <script src="./components/x-tip/index.mjs"></script>
 </head>
 <body>
     <style>
+        body {
+            margin: 0;
+        }
         .title {
             text-align: center;
+            font-variant: small-caps;
+            font-style: italic;
         }
         .subtitle {
             white-space: pre;
@@ -37,10 +25,29 @@
             color: silver;
         }
     </style>
+    <x-tip>
+        <!-- <span slot="text">本网站使用较多web新特性，为避免出现错误，请使用最新版chrome浏览器查看。</span> -->
+    </x-tip>
     <h1 class="title">
-        Pure Javascript Demo Collection
-        <span class="subtitle">    powered by Web Compoennts</span>
+        Showcase For Coding 
+        <span class="subtitle">    powered by javascript</span>
     </h1>
-    <!-- <display-list></display-list> -->
+    <style>
+        p {
+            height: 100%;
+        }
+    </style>
+    <ul>
+        <li>
+            <a href="#demo">demo</a>
+        </li>
+        <li>
+            <a href="#about">about</a>
+        </li>
+        <li>
+            <a href="#">/</a>
+        </li>
+    </ul>
+    <div id="app"></div>
 </body>
 </html>

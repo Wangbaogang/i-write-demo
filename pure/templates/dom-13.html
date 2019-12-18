@@ -1,0 +1,65 @@
+<template data-label="click">
+    <style>
+        div div {
+            height: 50px;
+        }
+        .fire {
+            background-color: red;
+            width: 20px;
+            height: 20px;
+            padding: 10px;
+            border: 10px solid green;
+            margin: 10px;
+        }
+    </style>
+    <div>
+        <div onclick="alert(event.type)">
+            click me
+        </div>
+        <div onclick="alert(this.innerHTML)">
+            click me2
+        </div>
+        <div onclick="alert(innerHTML);console.log(event)">
+            click me3
+        </div>
+        <div tabindex="0" onfocus="console.log('设置了tabindex的div可获取焦点')" onkeypress="console.log(event)">
+            click me4
+        </div>
+        <a href="#" onfocus="console.log('focus Event', event)"> 
+            click me5
+        </a>
+        <div class="fire" onclick="alert('fire!')">
+            
+        </div>
+        <div onmouseover="console.log(event.relatedTarget)">
+            mouseover 
+        </div>
+        <div ondblclick="alert('dbclick!')">
+            dbclick
+        </div>
+        <label for="">
+            键盘事件
+            <input type="text" 
+                onkeydown="console.log(event, event.type)"
+                onkeypress="console.log(event, event.type)"
+                onkeyup="console.log(event, event.type)"
+            >
+        </label>
+        <hr>
+        <form method="post">
+            <input type="text" name="username" value="" onselect="console.log(value)">
+            <input type="button" value="Echo Username" onclick="alert(username.value)">
+        </form>
+    </div>
+</template>
+<script>
+    // error
+    // document.querySelector('h1').onclick = function() {alert(this.innerHTML)}
+    let a = function(event) {
+        alert(this.innerHTML);
+        console.log(window.event);
+        console.log(event, window.event === event);
+
+    }
+    // document.querySelector('h1').addEventListener('click', a)
+</script>

@@ -1,0 +1,28 @@
+<template data-label="Range API">
+    <style></style>
+    <div>
+        <p id="dom12-range">
+            paragraph 1
+            <span>span 1</span>
+            <span>span 2</span>
+            <span>span 3</span>
+        </p>
+        <p>paragraph 2</p>
+        <p>paragraph 3</p>
+    </div>
+    <script>
+        
+
+        window.getSelection().removeAllRanges();
+        const range = document.createRange();
+        const h1 = document.querySelector("h1");
+        range.selectNode(h1);
+        window.getSelection().addRange(range);
+
+        range.setStart(h1, 0);
+        range.setEnd(h1.firstElementChild.firstChild, 10);
+
+        // console.log(range.deleteContents());
+        console.log(range.cloneContents());
+    </script>
+</template>
