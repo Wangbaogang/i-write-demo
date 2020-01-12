@@ -1,0 +1,26 @@
+<template data-label="字符串拼接性能测试">
+    <style></style>
+    <script type="module" src="/pure/components/show-performance.mjs">
+    </script>
+    <p>
+        为啥第一次这么快？
+        <show-performance func='this._func = function() {\n var str = "abc"; str += "def"\n}' times="10000000"></show-performance>
+    </p>
+
+    <p>
+        性能差距：
+        <show-performance func='this._func = function() {\n var str = "abc"; str += "def"\n}' times="10000000"></show-performance>
+        <show-performance func='this._func = function() {\n var str = "abc"; str = str + "def"\n}' times="10000000"></show-performance>    
+        </p>
+    <p>
+        性能差距：
+        <show-performance func='this._func = function() {\n var str = "zero"; str += "one" + "two" \n}' times="10000000"></show-performance>
+        <show-performance func='this._func = function() {\n var str = "zero"; str = str + "one" + "two" \n}' times="10000000"></show-performance>
+    </p>
+    
+    <p>
+        <strong>尽信书不如无书</strong>
+    </p>
+    <script>
+    </script>
+</template>

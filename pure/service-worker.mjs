@@ -40,8 +40,8 @@ console.log(self);
         // `;
 
         return `
-            const template = \`${text}\`;
-            export default template;
+            const html = \`${text}\`;
+            export default html;
         `
     }
     

@@ -13,3 +13,39 @@
         <p>This is paragraph, and its top margin is 10% the width of its parent element.</p>
     </div>
 </template>
+<template data-label="包含块未设置高度，元素设置百分数高度的效果">
+    <style>
+        .a {
+            height: 300px;
+            border: 1px solid red;
+        }
+        .b {
+            height: 100%;
+        }
+        .c {
+            height: 100%;
+        }
+    </style>
+    <div class="a">
+        <div class="b">
+            dasdbadauisdauidhasui
+            <div class="c">1111121331312312321</div>
+        </div>
+    </div>
+</template>
+<template data-label="上下margin为auto">
+    <style>
+        .a {
+            height: 200px;
+            background-color: red;
+        }
+        .b {
+            height: 100px;
+            margin: auto 0;
+            background-color: green;
+        }
+    </style>
+    <div class="a">
+        <div class="b">b</div>
+    </div>
+</template>

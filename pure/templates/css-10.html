@@ -1,0 +1,344 @@
+<template data-label="浮动">
+    <style>
+        p {
+            /* border: 1px solid red; */
+            width: 200px;
+            height: 100px;
+        }
+        p span {
+            float: left;
+            margin: 10px;
+        }
+
+        .right {
+            float: right;
+        }
+        div {
+            float: left;
+            width: 100%;
+        }
+        img {
+            float: left;
+        }
+    </style>
+    <p>
+        p段落文本
+        <span>浮动一</span>
+        <span>浮动二</span>
+    </p>
+    <p>
+        p段落文本
+        <span>浮动一</span>
+        <span class="right">浮动二</span>
+    </p>
+    <div>
+        <img src="a.jpg" alt="pciture">
+        the 'div' will stretch around the floated image because the 'div' has been floated
+        <span>the 'div' will stretch around the floated image because the 'div' has been floated</span>
+        the 'div' will stretch around the floated image because the 'div' has been floated
+
+    </div>
+</template>
+<template data-label="浮动元素在两个合并的外边距中间">
+    <style>
+        div {
+            width: 300px;
+        }
+        .float {
+            float: left;
+        }
+        .sub {
+            vertical-align: sub;
+        }
+    </style>
+    <div>
+        <p>非浮动段落</p>
+        <p class="float">浮动段落</p>
+        <p><span class="sub">sub</span>非浮动段落非浮动段落非浮动段落非浮动段落非浮动段落非浮动段落非浮动段落非浮动段落非浮动段落非浮动段落非浮动段落</p>
+        
+    </div>
+</template>
+<template data-label="左右元素一行">
+    <style> 
+        .container {
+            height: 100px;
+        }
+        .left {
+            width: 150px;
+            float: left;
+        }
+        .right {
+            float: right;
+            width: 100%;
+            box-sizing: border-box;
+            margin-left: -150px;
+            padding-left: 150px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</template>
+<template data-label="绝对定位">
+    <style>
+        div {
+            margin: 30px;
+        }
+    </style>
+    <div>
+        12345
+        <p>决定定位元素</p>
+    </div>
+</template>
+<template data-label="浮动元素与正常流中元素层叠时的展示">
+    <style>
+        p {
+            width: 300px;
+            background-color: red;
+            /* clear: left; */
+        }
+        span {
+            background-color: blue;
+        }
+        .left {
+            background-color: yellowgreen;
+            float: left;
+            width: 30px;
+            margin-right: -20px;
+        }
+    </style>
+        <span class="left">浮动元素文字</span>
+        <p>块元素文字</p>
+        <span>行内元素文字</span>
+</template>
+<template data-label="绝对定位实现多行省略号">
+    <style>
+        p {
+            position: relative;
+            text-align: justify;
+            width:  100px;
+            line-height: 20px;
+            height: 60px;
+            overflow: hidden;
+            background: red;
+            word-break: break-all;
+        }
+
+        .omit {
+            position: absolute;
+            background-color: inherit;
+            right: 0;
+            top: 40px;
+            width: 1em;
+        }
+        .mask {
+            background-color: inherit; 
+            position: absolute;   
+            width: 100%;      
+            height: 20px;   
+            z-index: 1;                                   
+        }
+        .mask.nextline {
+            left: 0;
+            margin-top: 20px;
+        }
+    </style>
+    <p>
+        文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+        <span class="mask"></span>
+        <span class="mask nextline"></span>     
+        <span class="omit">...</span>
+    </p>
+    <p>
+        文字文字文字文字文字
+        <span class="mask"></span>
+        <span class="mask nextline"></span>
+        <span class="omit">...</span>
+    </p>
+    <p>
+        文字文字文字文字文字文字
+        <span class="mask"></span>
+        <span class="mask nextline"></span>
+        <span class="omit">...</span>
+    </p>
+    <p>
+        文字文字文字文字文字文字文字文字文
+        <span class="mask"></span>
+        <span class="mask nextline"></span>
+        <span class="omit">...</span>
+    </p>
+    <p>
+        文字文字文字文字文字文字文字文字文字
+        <span class="mask"></span>
+        <span class="mask nextline"></span>
+        <span class="omit">...</span>
+    </p>
+    <p>
+        文字文字文字文字文字文字文字文1232313123132
+        <span class="mask"></span>
+        <span class="mask nextline"></span>
+        <span class="omit">...</span>
+    </p>
+</template>
+<template data-label="绝对定位包含块">
+    <style>
+        p {
+            width: 200px;
+            height: 200px;
+            color: green;
+        }
+        .container {
+            position: relative;
+        }
+        .container span {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            color: red;
+        }
+    </style>
+    <p class="container">
+        包含块为块元素
+        <span>绝对定位元素1</span>
+    </p>
+    <p>
+        <span class="container">
+            包含块为行内元素包含块为行内元素包含块为行内元素包含块为行内元素包含块为行内元素
+            <span>
+                绝对定位元素2
+            </span>
+        </span>
+    </p>
+</template>
+<template data-label="溢出">
+    <style>
+        p {
+            width: 100px;
+            height: 40px;
+            border: 1px solid red;
+            margin-bottom: 100px;
+        }
+        p:nth-child(2) {
+            overflow: hidden;
+        }
+        p:nth-child(3) {
+            overflow: auto;
+        }
+        p:nth-child(4) {
+            overflow: scroll;
+        }
+        .hide {
+            visibility: hidden;
+        }
+    </style>
+    <div>
+        <p>
+            文本文本文本文本文本文本文本文本文本文本文本文本
+        </p>
+        <p>
+                文本文本文本文本文本文本文本文本文本文本文本文本
+        </p>
+        <p>
+            文本文本文本文本文本文本文本文本文本文本文本文本
+        </p>
+        <p>
+            文本文本文本文本文本文本文本文本文本文本文本文本
+        </p>
+        <hr>
+        <p class="hide">
+            该文本不可见
+        </p>
+    </div>
+</template>
+<template data-label="文档滚动和绝对定位">
+    <style>
+        .a {
+            height: 100px;
+            overflow: auto;
+        }
+        .b {
+            position: relative;
+            height: 200px;
+        }
+        .c {
+            position: absolute;
+        }
+    </style>
+    <div class="a">
+        <div class="b">
+            <div class="c">ccccccc</div>
+        </div>
+    </div>
+</template>
+<template data-label="绝对定位auto">
+    <style>
+        .a {
+            position: relative;
+            height: 200px;
+            background-color: red;
+        }
+        .b {
+            position: absolute;
+            background-color: green;
+            top: 0;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
+            margin: auto 0;
+        }
+    </style>
+    <div class="a">
+        <div class="b">b</div>
+    </div>
+</template>
+<template data-label="相对定位过度受限">
+    <style>
+        strong {
+            position: relative;
+            top: 10px;
+            bottom: 10px;
+        }
+    </style>
+    <p>
+        1212121212
+        <strong>bottom总是等于-top</strong>
+        5656566565
+    </p>
+</template>
+<template data-label="z-index">
+    <style>
+        p {
+            position: relative;
+            background-color: yellow;
+        }
+        strong {
+            position: absolute;
+            color: red;
+            background: green;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+    <p>
+        p元素内容
+        <strong>strong元素内容</strong>  
+    </p>
+</template>
+<template data-label="包含块有偏移量">
+    <style>
+        .parent {
+            position: relative;
+            left: -100px;
+        }
+        .child {
+            position: absolute;
+            left: 0;
+        }
+    </style>
+    <div class="parent">
+        父： 相对定位元素
+        <div class="child">子： 决定定位元素</div>
+    </div>
+</template>
